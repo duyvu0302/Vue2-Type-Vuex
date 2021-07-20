@@ -26,7 +26,7 @@ const actions: ActionTree<UserState, RootState> = {
             if (response.data.length > 0) {
                 console.log('error');
             } else {
-                const res = await axios.post(`${baseUrl}/listUser`, params);
+                const res = await axios.post(`${baseUrl}`, params);
                 commit(types.CREATE_ACCOUNT, res.data);
                 localStorage.setItem(
                     'user',
@@ -60,6 +60,7 @@ const actions: ActionTree<UserState, RootState> = {
 
 const mutations: MutationTree<UserState> = {
     [types.CREATE_ACCOUNT](state: UserState, user: User) {
+        state.isAuth = true;
         state.user = user;
     },
     [types.LOGIN](state: UserState, user: User) {
