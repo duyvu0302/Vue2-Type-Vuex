@@ -1,0 +1,23 @@
+{
+  "hello": "Hallo {name} !",
+  "one": "tow",
+  "hai": "thu2",
+  "header": {
+    "main": "header"
+  },
+  "hoho": "laugh",
+  "soi": "soi | cuu | ga",
+  "FOOTER": "footer",
+  "messages": {
+    "mothaiba": "mothiba",
+    "regexEmail": "{_field_} format is invalid"
+  },
+  "fields": {
+    "Email": "email",
+    "Name": "Name",
+    "Password": "Password",
+    "Confirm Password": "ConfirmPassword",
+    "Phone": "Phone"
+  },
+  "LOGIN": "Login"
+}

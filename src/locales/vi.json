@@ -1,0 +1,23 @@
+{
+  "hello": "xin chao {name} !",
+  "one": "mot",
+  "hai": "tusdsay",
+  "header": {
+    "main": "dau"
+  },
+  "hoho": "cuoi",
+  "soi": "1|2|3",
+  "FOOTER": "phút tơ",
+  "messages": {
+    "mothaiba": "bahai,mt",
+    "regexEmail": "{_field_} khong dung dinh dang"
+  },
+  "fields": {
+    "Email": "email",
+    "Name": "Name",
+    "Password": "Password",
+    "Confirm Password": "ConfirmPassword",
+    "Phone": "Phone"
+  },
+  "LOGIN": "Dang nhap"
+}
