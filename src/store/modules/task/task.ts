@@ -68,6 +68,15 @@ const actions: ActionTree<TaskState, RootState> = {
             console.log(error);
         }
     },
+    async getDetail({ commit }: TaskContext, params: Task) {
+        const { id } = params;
+        try {
+            const response = await axios.get(`${baseUrl}/tasks/${id}`);
+            commit(types.GET_DETAIL, response.data);
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };
 const mutations: MutationTree<TaskState> = {
     [types.GET_TASK_LIST](state: TaskState, list: Task[]) {
@@ -85,6 +94,10 @@ const mutations: MutationTree<TaskState> = {
     [types.DELETE_TASK](state: TaskState, idTask: Task) {
         const indexId = state.listTask.findIndex((item) => item.id === idTask);
         state.listTask.splice(indexId, 1);
+    },
+    [types.GET_DETAIL](state: TaskState, task: Task) {
+        console.log('🚀 ~ file: task.ts ~ line 99 ~ task', task);
+        state.task = task;
     },
 };
 export const task = {

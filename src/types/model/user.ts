@@ -4,5 +4,6 @@ export interface User {
     password?: string;
     role?: string;
     name?: string;
-    phone?: number;
+    mobile?: number | null;
+    confirmation?: string;
 }

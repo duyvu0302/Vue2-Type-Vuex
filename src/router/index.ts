@@ -78,22 +78,22 @@ const router = new VueRouter({
     },
 });
 
-// router.beforeEach((to, from, next) => {
-//     const authRequired: boolean = to.matched.some((x) => x.meta.requiresAuth);
-//     const isAdmin: boolean = to.matched.some((x) => x.meta.isAdmin);
-//     const loggedIn: User = JSON.parse(localStorage.getItem('user')!);
+router.beforeEach((to, from, next) => {
+    const authRequired: boolean = to.matched.some((x) => x.meta.requiresAuth);
+    const isAdmin: boolean = to.matched.some((x) => x.meta.isAdmin);
+    const loggedIn: User = JSON.parse(localStorage.getItem('user')!);
 
-//     if (!loggedIn) {
-//         if (authRequired) {
-//             return next('/login');
-//         } else next();
-//     } else {
-//         if (to.path == '/login') return next('/');
-//         if (authRequired && isAdmin) {
-//             if (loggedIn?.role === 'admin') next();
-//             else next('/');
-//         } else next();
-//     }
-// });
+    if (!loggedIn) {
+        if (authRequired) {
+            return next('/login');
+        } else next();
+    } else {
+        if (to.path == '/login') return next('/');
+        if (authRequired && isAdmin) {
+            if (loggedIn?.role === 'admin') next();
+            else next('/');
+        } else next();
+    }
+});
 
 export default router;
